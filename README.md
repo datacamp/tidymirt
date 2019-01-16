@@ -21,6 +21,7 @@ mod1 <- mirt(data, 1, SE = TRUE)
 ### Tidy
 
 ```R
+library(tidymirt)
 tidy(mod1)
 ```
 
@@ -45,6 +46,7 @@ tidy(mod1)
 ### Glance
 
 ```R
+library(tidymirt)
 glance(mod1)
 ```
 
