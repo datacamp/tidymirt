@@ -13,7 +13,7 @@ test_that("tidy no args returns expected 1 factor parameters", {
 
 test_that("tidy no args returns 4 pars per item", {
   expect_equal(
-    nrow(tidy(mod_1f)),
+    nrow(tidy(mod_1f, group_pars = FALSE)),
     5*4
   )
 })
