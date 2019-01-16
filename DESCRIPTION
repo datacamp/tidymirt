@@ -1,0 +1,24 @@
+Package: tidymirt
+Type: Package
+Title: Tidy Representations of Mirt Model Output
+Version: 0.0.1
+Author: Michael Chow
+Maintainer: Michael Chow <michael@datacamp.com>
+Description: Broom methods for working with fitted mirt models.
+    These methods provide quick ways to summarize model fits (glance),
+    get tibble representations of parameters (tidy), and return a
+    model-enriched form of the data (augment; not yet implemented).
+Depends:
+    R (>= 3.1),
+    mirt,
+    dplyr,
+    purrr,
+    tidyr,
+    stringr,
+    broom
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Suggests: 
+    testthat
