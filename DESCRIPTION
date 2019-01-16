@@ -12,7 +12,6 @@ Depends:
     R (>= 3.1),
     mirt,
     dplyr,
-    purrr,
     tidyr,
     stringr,
     broom

@@ -35,7 +35,6 @@
 #'
 #' @importFrom dplyr filter %>% tibble
 #' @importFrom tidyr unnest
-#' @importFrom purrr map
 #' @importFrom broom tidy
 #' @export
 tidy.SingleGroupClass <- function(x, group_pars = TRUE, ...) {
@@ -43,9 +42,9 @@ tidy.SingleGroupClass <- function(x, group_pars = TRUE, ...) {
   excluded <- if (!group_pars) c("GroupPars", "lr.betas") else c()
 
   coef(x, ...) %>%
-  tibble(item_number = 1:length(.), item = names(.), values = .) %>%
-  filter(!item %in% excluded) %>%
-    unnest(values = map(values, .format_fit_coef_entry))
+    tibble(item_number = 1:length(.), item = names(.), values = .) %>%
+    filter(!item %in% excluded) %>%
+    unnest(values = lapply(values, .format_fit_coef_entry))
 }
 
 
