@@ -1,7 +1,10 @@
 context("tidy")
 
 test_that("tidy works on the main mirt example", {
-  pars <- tidy(mod_1f)
+  expect_s3_class(
+    tidy(mod_1f),
+    "tbl_df"
+  )
 })
 
 test_that("tidy no args returns expected 1 factor parameters", {
