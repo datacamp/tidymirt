@@ -44,7 +44,8 @@ tidy.SingleGroupClass <- function(x, group_pars = TRUE, ...) {
   coef(x, ...) %>%
     tibble(item_number = 1:length(.), item = names(.), values = .) %>%
     filter(!item %in% excluded) %>%
-    unnest(values = lapply(values, .format_fit_coef_entry))
+    mutate(values = lapply(values, .format_fit_coef_entry)) %>%
+    unnest(values)
 }
 
 
